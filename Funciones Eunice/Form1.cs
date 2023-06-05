@@ -156,7 +156,7 @@ namespace Funciones_Eunice
             PanelSimpson.Visible = false;
             AnimatePanels(PanelTrapecio);
 
-          
+
         }
         #endregion
     }

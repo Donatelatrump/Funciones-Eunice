@@ -170,17 +170,16 @@
             // 
             // materialButton3
             // 
-            materialButton3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             materialButton3.Depth = 0;
             materialButton3.DrawShadows = true;
             materialButton3.Font = new Font("Roboto Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             materialButton3.HighEmphasis = true;
             materialButton3.Icon = null;
-            materialButton3.Location = new Point(954, 124);
+            materialButton3.Location = new Point(13, 114);
             materialButton3.Margin = new Padding(4, 6, 4, 6);
             materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton3.Name = "materialButton3";
-            materialButton3.Size = new Size(76, 36);
+            materialButton3.Size = new Size(138, 61);
             materialButton3.TabIndex = 12;
             materialButton3.Text = "Volver";
             materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -190,17 +189,16 @@
             // 
             // materialButton2
             // 
-            materialButton2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             materialButton2.Depth = 0;
             materialButton2.DrawShadows = true;
             materialButton2.Font = new Font("Roboto Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             materialButton2.HighEmphasis = true;
             materialButton2.Icon = null;
-            materialButton2.Location = new Point(1231, 124);
+            materialButton2.Location = new Point(1156, 114);
             materialButton2.Margin = new Padding(4, 6, 4, 6);
             materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton2.Name = "materialButton2";
-            materialButton2.Size = new Size(92, 36);
+            materialButton2.Size = new Size(138, 61);
             materialButton2.TabIndex = 11;
             materialButton2.Text = "Resetear";
             materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -213,7 +211,7 @@
             materialTextBox4.BorderStyle = BorderStyle.None;
             materialTextBox4.Depth = 0;
             materialTextBox4.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            materialTextBox4.Location = new Point(1039, 47);
+            materialTextBox4.Location = new Point(1169, 31);
             materialTextBox4.MaxLength = 50;
             materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
             materialTextBox4.Multiline = false;
@@ -228,7 +226,7 @@
             materialTextBox3.BorderStyle = BorderStyle.None;
             materialTextBox3.Depth = 0;
             materialTextBox3.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            materialTextBox3.Location = new Point(745, 47);
+            materialTextBox3.Location = new Point(827, 28);
             materialTextBox3.MaxLength = 50;
             materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
             materialTextBox3.Multiline = false;
@@ -243,7 +241,7 @@
             materialTextBox2.BorderStyle = BorderStyle.None;
             materialTextBox2.Depth = 0;
             materialTextBox2.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            materialTextBox2.Location = new Point(489, 47);
+            materialTextBox2.Location = new Point(534, 28);
             materialTextBox2.MaxLength = 50;
             materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
             materialTextBox2.Multiline = false;
@@ -258,7 +256,7 @@
             materialTextBox1.BorderStyle = BorderStyle.None;
             materialTextBox1.Depth = 0;
             materialTextBox1.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            materialTextBox1.Location = new Point(144, 47);
+            materialTextBox1.Location = new Point(143, 31);
             materialTextBox1.MaxLength = 50;
             materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
             materialTextBox1.Multiline = false;
@@ -269,17 +267,16 @@
             // 
             // materialButton1
             // 
-            materialButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             materialButton1.Depth = 0;
             materialButton1.DrawShadows = true;
             materialButton1.Font = new Font("Roboto Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             materialButton1.HighEmphasis = true;
             materialButton1.Icon = null;
-            materialButton1.Location = new Point(1104, 124);
+            materialButton1.Location = new Point(957, 114);
             materialButton1.Margin = new Padding(4, 6, 4, 6);
             materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton1.Name = "materialButton1";
-            materialButton1.Size = new Size(95, 36);
+            materialButton1.Size = new Size(138, 61);
             materialButton1.TabIndex = 6;
             materialButton1.Text = "Calcular";
             materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -291,7 +288,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Roboto", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(889, 69);
+            label7.Location = new Point(1019, 53);
             label7.Name = "label7";
             label7.Size = new Size(133, 28);
             label7.TabIndex = 5;
@@ -301,7 +298,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Roboto", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(637, 69);
+            label6.Location = new Point(719, 50);
             label6.Name = "label6";
             label6.Size = new Size(102, 28);
             label6.TabIndex = 4;
@@ -311,7 +308,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Roboto", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(371, 69);
+            label5.Location = new Point(416, 50);
             label5.Name = "label5";
             label5.Size = new Size(103, 28);
             label5.TabIndex = 3;
@@ -321,7 +318,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Roboto", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(25, 69);
+            label4.Location = new Point(24, 53);
             label4.Name = "label4";
             label4.Size = new Size(113, 28);
             label4.TabIndex = 2;
@@ -330,9 +327,9 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Salmon;
-            pictureBox1.Location = new Point(102, 216);
+            pictureBox1.Location = new Point(34, 220);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1108, 468);
+            pictureBox1.Size = new Size(1280, 468);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -340,9 +337,9 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(68, 184);
+            pictureBox2.Location = new Point(3, 184);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(1181, 524);
+            pictureBox2.Size = new Size(1347, 524);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -370,17 +367,16 @@
             // 
             // materialButton4
             // 
-            materialButton4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             materialButton4.Depth = 0;
             materialButton4.DrawShadows = true;
             materialButton4.Font = new Font("Roboto Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             materialButton4.HighEmphasis = true;
             materialButton4.Icon = null;
-            materialButton4.Location = new Point(953, 106);
+            materialButton4.Location = new Point(24, 94);
             materialButton4.Margin = new Padding(4, 6, 4, 6);
             materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton4.Name = "materialButton4";
-            materialButton4.Size = new Size(76, 36);
+            materialButton4.Size = new Size(138, 61);
             materialButton4.TabIndex = 25;
             materialButton4.Text = "Volver";
             materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -390,17 +386,16 @@
             // 
             // materialButton5
             // 
-            materialButton5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             materialButton5.Depth = 0;
             materialButton5.DrawShadows = true;
             materialButton5.Font = new Font("Roboto Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             materialButton5.HighEmphasis = true;
             materialButton5.Icon = null;
-            materialButton5.Location = new Point(1230, 106);
+            materialButton5.Location = new Point(1197, 94);
             materialButton5.Margin = new Padding(4, 6, 4, 6);
             materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton5.Name = "materialButton5";
-            materialButton5.Size = new Size(92, 36);
+            materialButton5.Size = new Size(138, 61);
             materialButton5.TabIndex = 24;
             materialButton5.Text = "Resetear";
             materialButton5.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -413,7 +408,7 @@
             materialTextBox5.BorderStyle = BorderStyle.None;
             materialTextBox5.Depth = 0;
             materialTextBox5.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            materialTextBox5.Location = new Point(1038, 28);
+            materialTextBox5.Location = new Point(1156, 28);
             materialTextBox5.MaxLength = 50;
             materialTextBox5.MouseState = MaterialSkin.MouseState.OUT;
             materialTextBox5.Multiline = false;
@@ -427,7 +422,7 @@
             materialTextBox6.BorderStyle = BorderStyle.None;
             materialTextBox6.Depth = 0;
             materialTextBox6.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            materialTextBox6.Location = new Point(744, 28);
+            materialTextBox6.Location = new Point(815, 28);
             materialTextBox6.MaxLength = 50;
             materialTextBox6.MouseState = MaterialSkin.MouseState.OUT;
             materialTextBox6.Multiline = false;
@@ -441,7 +436,7 @@
             materialTextBox7.BorderStyle = BorderStyle.None;
             materialTextBox7.Depth = 0;
             materialTextBox7.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            materialTextBox7.Location = new Point(488, 28);
+            materialTextBox7.Location = new Point(512, 28);
             materialTextBox7.MaxLength = 50;
             materialTextBox7.MouseState = MaterialSkin.MouseState.OUT;
             materialTextBox7.Multiline = false;
@@ -455,7 +450,7 @@
             materialTextBox8.BorderStyle = BorderStyle.None;
             materialTextBox8.Depth = 0;
             materialTextBox8.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            materialTextBox8.Location = new Point(143, 28);
+            materialTextBox8.Location = new Point(128, 28);
             materialTextBox8.MaxLength = 50;
             materialTextBox8.MouseState = MaterialSkin.MouseState.OUT;
             materialTextBox8.Multiline = false;
@@ -466,17 +461,16 @@
             // 
             // materialButton6
             // 
-            materialButton6.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             materialButton6.Depth = 0;
             materialButton6.DrawShadows = true;
             materialButton6.Font = new Font("Roboto Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             materialButton6.HighEmphasis = true;
             materialButton6.Icon = null;
-            materialButton6.Location = new Point(1103, 106);
+            materialButton6.Location = new Point(918, 94);
             materialButton6.Margin = new Padding(4, 6, 4, 6);
             materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton6.Name = "materialButton6";
-            materialButton6.Size = new Size(95, 36);
+            materialButton6.Size = new Size(138, 61);
             materialButton6.TabIndex = 19;
             materialButton6.Text = "Calcular";
             materialButton6.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -488,7 +482,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Roboto", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(888, 50);
+            label8.Location = new Point(1006, 50);
             label8.Name = "label8";
             label8.Size = new Size(133, 28);
             label8.TabIndex = 18;
@@ -498,7 +492,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Roboto", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(636, 50);
+            label9.Location = new Point(707, 50);
             label9.Name = "label9";
             label9.Size = new Size(102, 28);
             label9.TabIndex = 17;
@@ -508,7 +502,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Roboto", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(370, 50);
+            label10.Location = new Point(394, 50);
             label10.Name = "label10";
             label10.Size = new Size(103, 28);
             label10.TabIndex = 16;
@@ -518,7 +512,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Roboto", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(24, 50);
+            label11.Location = new Point(9, 50);
             label11.Name = "label11";
             label11.Size = new Size(113, 28);
             label11.TabIndex = 15;
@@ -527,9 +521,9 @@
             // pictureBox3
             // 
             pictureBox3.BackColor = Color.Sienna;
-            pictureBox3.Location = new Point(101, 196);
+            pictureBox3.Location = new Point(34, 196);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(1108, 468);
+            pictureBox3.Size = new Size(1280, 468);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 13;
             pictureBox3.TabStop = false;
@@ -537,9 +531,9 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(67, 164);
+            pictureBox4.Location = new Point(0, 164);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(1181, 524);
+            pictureBox4.Size = new Size(1347, 524);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 14;
             pictureBox4.TabStop = false;
