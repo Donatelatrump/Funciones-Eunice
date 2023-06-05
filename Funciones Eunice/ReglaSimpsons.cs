@@ -12,8 +12,9 @@ namespace Funciones_Eunice
             {
                 Expression expression = new Expression(expresion);
 
-                var plt = new Plot(pictureBox.Width, pictureBox.Height); // Crea un objeto Plot de ScottPlot con el tamaño del PictureBox
-                double[] xValues = DataGen.Range(a, b, 0.01); // Genera un rango de valores x para graficar la función
+                var plt = new Plot(pictureBox.Width, pictureBox.Height);
+
+                double[] xValues = DataGen.Range(a, b, 0.01);
 
                 double[] yValues = new double[xValues.Length];
                 for (int i = 0; i < xValues.Length; i++)
@@ -22,36 +23,45 @@ namespace Funciones_Eunice
                     yValues[i] = Convert.ToDouble(expression.Evaluate());
                 }
 
-                plt.PlotScatter(xValues, yValues, label: "Función"); // Grafica la función como puntos
+                plt.PlotScatter(xValues, yValues, label: "Función");
 
-                // Graficar los intervalos
-                double intervalSize = (b - a) / n; // Tamaño de cada intervalo
-                for (int i = 0; i < n; i++)
+                // Cálculo de la regla de Simpson
+                double h = (b - a) / n;
+                double area = 0;
+
+                for (int i = 1; i <= n; i++)
                 {
-                    double intervalStart = a + i * intervalSize; // Inicio del intervalo
-                    double intervalEnd = intervalStart + intervalSize; // Fin del intervalo
+                    double xi = a + (i - 1) * h;
+                    double xi1 = a + i * h;
+                    double xiMid = (xi + xi1) / 2;
 
-                    // Evaluar la función en los puntos del intervalo
-                    double[] intervalX = { intervalStart, intervalEnd };
-                    double[] intervalY = new double[intervalX.Length];
-                    for (int j = 0; j < intervalX.Length; j++)
-                    {
-                        expression.Parameters["x"] = intervalX[j];
-                        intervalY[j] = Convert.ToDouble(expression.Evaluate());
-                    }
+                    expression.Parameters["x"] = xi;
+                    double yi = Convert.ToDouble(expression.Evaluate());
 
-                    plt.PlotScatter(intervalX, intervalY, markerShape: MarkerShape.filledCircle, color: System.Drawing.Color.Red, markerSize: 10); // Grafica los puntos del intervalo en rojo
+                    expression.Parameters["x"] = xi1;
+                    double yi1 = Convert.ToDouble(expression.Evaluate());
+
+                    expression.Parameters["x"] = xiMid;
+                    double yiMid = Convert.ToDouble(expression.Evaluate());
+
+                    area += (h / 6) * (yi + 4 * yiMid + yi1);
+
+                    double[] intervalX = { xi, xiMid, xi1 };
+                    double[] intervalY = { yi, yiMid, yi1 };
+
+                    plt.PlotPolygon(intervalX, intervalY, fillColor: System.Drawing.Color.FromArgb(100, System.Drawing.Color.Red));
                 }
 
-                // Configurar título y etiquetas
-                plt.Title("Gráfico de la función");
+                // Mostrar el resultado de la regla de Simpson en el gráfico
+                plt.Title($"Gráfico de la función\nÁrea (Regla de Simpson): {area}");
+
+                // Configuración de las etiquetas del gráfico
                 plt.XLabel("x");
                 plt.YLabel("y");
                 plt.Grid(true);
-
                 plt.Legend(location: Alignment.UpperRight);
 
-                // Mostrar el gráfico
+                // Mostrar el gráfico en el PictureBox
                 pictureBox.Image = plt.GetBitmap();
             }
             catch (Exception ex)
@@ -59,36 +69,8 @@ namespace Funciones_Eunice
                 MessageBox.Show("Error al evaluar la expresión matemática: " + ex.Message);
             }
         }
-        static double ReglaSimpson(double a, double b, int n, Expression expression)
-    {
-        double h = (b - a) / n;
-        double suma = 0;
 
-        for (int i = 0; i <= n; i++)
-        {
-            double x = a + i * h;
-            expression.Parameters["x"] = x;
-
-            double y = (double)expression.Evaluate();
-            if (i == 0 || i == n)
-            {
-                suma += y;
-            }
-            else if (i % 2 == 0)
-            {
-                suma += 2 * y;
-            }
-            else
-            {
-                suma += 4 * y;
-            }
-        }
-
-        return (h / 3) * suma;
     }
-
-
-}
 
 }
     

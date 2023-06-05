@@ -7,35 +7,32 @@ namespace Funciones_Eunice
         public Form1()
         {
             InitializeComponent();
-            PanelSimpson.Hide();
-
-
+            PanelSimpson.Visible = false;
+            PanelTrapecio.Visible = false;
         }
+        #region Animaciones de paneles
         //Funcion de animacion para moverse del panel1 a PanelSimpson
-        private void AnimatePanels()
+        private void AnimatePanels(Panel panel)
         {
             int panel1TargetX = -panel1.Width; // Posición final en el eje X para ocultar el Panel1
             int panelSimpsonTargetX = 0; // Posición final en el eje X para mostrar el PanelSimpson
 
             // Configurar la posición inicial de los paneles
             panel1.Location = new Point(panel1.Location.X, 0);
-            PanelSimpson.Location = new Point(panel1.Location.X + panel1.Width, 0);
+            panel.Location = new Point(panel1.Location.X + panel1.Width, 0);
 
             // Animación para ocultar el Panel1 y mostrar el PanelSimpson
             System.Windows.Forms.Timer animationTimer = new System.Windows.Forms.Timer();
-            animationTimer.Interval = 5; // Intervalo de actualización de la animación (en milisegundos)
+            animationTimer.Interval = 15; // Intervalo de actualización de la animación (en milisegundos)
             animationTimer.Tick += (sender, e) =>
             {
                 // Actualizar la posición de los paneles en cada tick del timer
                 panel1.Location = new Point(panel1.Location.X - 10, panel1.Location.Y);
-                PanelSimpson.Location = new Point(PanelSimpson.Location.X - 10, PanelSimpson.Location.Y);
+                panel.Location = new Point(panel.Location.X - 10, panel.Location.Y);
 
                 // Verificar si se alcanzó la posición final y detener la animación
-                if (panel1.Location.X <= panel1TargetX && PanelSimpson.Location.X <= panelSimpsonTargetX)
+                if (panel1.Location.X <= panel1TargetX && panel.Location.X <= panelSimpsonTargetX)
                 {
-                    panel1.Visible = false;
-                    PanelSimpson.Visible = true;
-                    PanelSimpson.BringToFront();
                     animationTimer.Stop();
                 }
             };
@@ -44,14 +41,14 @@ namespace Funciones_Eunice
         }
 
         //Funcion de animacion para ir de PanelSImpson a panel1
-        private void AnimateBackToPanel1()
+        private void AnimateBackToPanel1(Panel panel)
         {
             int panel1TargetX = 0; // Posición final en el eje X para mostrar el Panel1
             int panelSimpsonTargetX = panel1.Width; // Posición final en el eje X para ocultar el PanelSimpson
 
             // Configurar la posición inicial de los paneles
             panel1.Location = new Point(-panel1.Width, 0);
-            PanelSimpson.Location = new Point(0, 0);
+            panel.Location = new Point(0, 0);
 
             // Animación para ocultar el PanelSimpson y mostrar el Panel1
             System.Windows.Forms.Timer animationTimer = new System.Windows.Forms.Timer();
@@ -60,14 +57,11 @@ namespace Funciones_Eunice
             {
                 // Actualizar la posición de los paneles en cada tick del timer
                 panel1.Location = new Point(panel1.Location.X + 10, panel1.Location.Y);
-                PanelSimpson.Location = new Point(PanelSimpson.Location.X + 10, PanelSimpson.Location.Y);
+                panel.Location = new Point(panel.Location.X + 10, panel.Location.Y);
 
                 // Verificar si se alcanzó la posición final y detener la animación
-                if (Math.Abs(panel1.Location.X) >= Math.Abs(panel1TargetX) && Math.Abs(PanelSimpson.Location.X) >= Math.Abs(panelSimpsonTargetX))
+                if (Math.Abs(panel1.Location.X) >= Math.Abs(panel1TargetX) && Math.Abs(panel.Location.X) >= Math.Abs(panelSimpsonTargetX))
                 {
-                    panel1.Visible = true;
-                    PanelSimpson.Visible = false;
-                    panel1.BringToFront();
                     animationTimer.Stop();
                 }
             };
@@ -75,9 +69,14 @@ namespace Funciones_Eunice
             animationTimer.Start();
         }
 
+
+        #endregion
+        #region Panel Simpson
         private void Button1_Click(object sender, EventArgs e)
         {
-            AnimatePanels();
+            PanelTrapecio.Visible = false;
+            PanelSimpson.Visible = true;
+            AnimatePanels(PanelSimpson);
 
         }
 
@@ -126,7 +125,39 @@ namespace Funciones_Eunice
 
         private void materialButton3_Click(object sender, EventArgs e)
         {
-            AnimateBackToPanel1();
+            AnimateBackToPanel1(PanelSimpson);
         }
+        #endregion
+        #region Panel Trapecio
+        [Obsolete]
+        private void materialButton6_Click(object sender, EventArgs e)
+        {
+            ReglaTrapecio.CalcularYMostrarGrafico(materialTextBox8.Text, Convert.ToDouble(materialTextBox7.Text), Convert.ToDouble(materialTextBox6.Text), Convert.ToInt32(materialTextBox5.Text), pictureBox3);
+        }
+
+        private void materialButton5_Click(object sender, EventArgs e)
+        {
+            materialTextBox8.Text = "";
+            materialTextBox7.Text = "";
+            materialTextBox6.Text = "";
+            materialTextBox5.Text = "";
+            pictureBox3.Image = null;
+        }
+
+        private void materialButton4_Click(object sender, EventArgs e)
+        {
+            PanelTrapecio.Visible = true;
+            AnimateBackToPanel1(PanelTrapecio);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PanelTrapecio.Visible = true;
+            PanelSimpson.Visible = false;
+            AnimatePanels(PanelTrapecio);
+
+          
+        }
+        #endregion
     }
 }
