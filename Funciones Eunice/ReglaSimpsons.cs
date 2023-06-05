@@ -5,9 +5,20 @@ namespace Funciones_Eunice
 {
     internal class ReglaSimpsons
     {
+
+        public static double limitea = 0;
+        public static double limiteb = 0;
+        public static int limiten = 0;
+        public static string expresion2 = "";
+        public static double resultado = 0;
+
         [Obsolete]
         public static void CalcularYMostrarGrafico(string expresion, double a, double b, int n, PictureBox pictureBox)
         {
+            limitea = a;
+            limiteb = b;
+            limiten = n;
+
             try
             {
                 Expression expression = new Expression(expresion);
@@ -22,7 +33,7 @@ namespace Funciones_Eunice
                     expression.Parameters["x"] = xValues[i];
                     yValues[i] = Convert.ToDouble(expression.Evaluate());
                 }
-
+                expresion2 = expresion;
                 plt.PlotScatter(xValues, yValues, label: "Función");
 
                 // Cálculo de la regla de Simpson
@@ -54,7 +65,7 @@ namespace Funciones_Eunice
 
                 // Mostrar el resultado de la regla de Simpson en el gráfico
                 plt.Title($"Gráfico de la función\nÁrea (Regla de Simpson): {area}");
-
+                resultado = area;
                 // Configuración de las etiquetas del gráfico
                 plt.XLabel("x");
                 plt.YLabel("y");

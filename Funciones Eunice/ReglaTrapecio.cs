@@ -7,9 +7,18 @@ namespace Funciones_Eunice
 {
     internal class ReglaTrapecio
     {
+        public static double limitea = 0;
+        public static double limiteb = 0;
+        public static int limiten = 0;
+        public static string expresion2 = "";
+        public static double resultado = 0;
         [Obsolete]
         public static void CalcularYMostrarGrafico(string expresion, double a, double b, int n, PictureBox pictureBox)
         {
+            limitea = a;
+            limiteb = b;
+            limiten = n;
+            expresion2 = expresion;
             try
             {
                 // Creación de la función a partir de la expresión
@@ -43,7 +52,10 @@ namespace Funciones_Eunice
 
                 area += (funcion(a) + funcion(b)) / 2;
                 area *= h;
-
+                if (area < 0)
+                {
+                    area*=-1;
+                }
                 // Graficar los puntos del trapecio
                 for (int i = 0; i < n; i++)
                 {
@@ -58,7 +70,7 @@ namespace Funciones_Eunice
 
                 // Mostrar el resultado de la regla del trapecio en el gráfico
                 plt.Title($"Gráfico de la función\nÁrea: {area}");
-
+                resultado = area;
                 // Configuración de las etiquetas del gráfico
                 plt.XLabel("x");
                 plt.YLabel("y");
@@ -79,6 +91,7 @@ namespace Funciones_Eunice
             var eval = new NCalc.Expression(expression);
             eval.Parameters["x"] = x;
             return Convert.ToDouble(eval.Evaluate());
+
         }
 
 

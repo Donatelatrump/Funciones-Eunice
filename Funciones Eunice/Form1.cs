@@ -160,14 +160,110 @@ namespace Funciones_Eunice
         }
         #endregion
 
-        private void label1_Click(object sender, EventArgs e)
+
+        string desplegar_filedialog()
         {
+            // Crea una instancia del cuadro de diálogo de selección de archivo
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            // Configura las propiedades del cuadro de diálogo
+            openFileDialog.Title = "Seleccionar archivo";
+            openFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*";
+            openFileDialog.CheckFileExists = true;
+            openFileDialog.CheckPathExists = true;
+
+            // Muestra el cuadro de diálogo y espera a que el usuario seleccione un archivo
+            DialogResult result = openFileDialog.ShowDialog();
+
+            // Verifica si el usuario ha seleccionado un archivo y presionado el botón "Aceptar"
+            if (result == DialogResult.OK)
+            {
+                // Obtiene la ruta del archivo seleccionado
+                string selectedFilePath = openFileDialog.FileName;
+                LecturaYExportacion a = new();
+                return selectedFilePath;
+            }
+            else
+            {
+                return "";
+            }
+
+        }//lectura
+
+        string desplegar_filedialo() // escritura
+        {
+
+            // Crea una instancia del cuadro de diálogo de guardado
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            // Configura las propiedades del cuadro de diálogo
+            saveFileDialog.Title = "Guardar archivo";
+            saveFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*";
+            saveFileDialog.CheckPathExists = true;
+
+            // Muestra el cuadro de diálogo y espera a que el usuario seleccione una ruta de archivo
+            DialogResult result = saveFileDialog.ShowDialog();
+
+            // Verifica si el usuario ha seleccionado una ruta de archivo y presionado el botón "Aceptar"
+            if (result == DialogResult.OK)
+            {
+                // Obtiene la ruta del archivo seleccionado
+                string selectedFilePath = saveFileDialog.FileName;
+
+                // Retorna la ruta del archivo seleccionado
+                return selectedFilePath;
+            }
+
+            // Si el usuario cancela el cuadro de diálogo o cierra sin seleccionar un archivo, retorna una cadena vacía
+            return string.Empty;
+        }
+    
+
+
+        LecturaYExportacion a = new();
+
+
+        #region Botones leer y exportar archivos Trapecio
+        //Leer archivo panel trapecio
+        private void materialButton7_Click(object sender, EventArgs e)//Lectura
+        {
+
+            string info = a.ReadTextFile(desplegar_filedialog());
+            string[] info2 = info.Split(',');
+            materialTextBox8.Text = info2[0];
+            materialTextBox7.Text = info2[1];
+            materialTextBox6.Text = info2[2];
+            materialTextBox5.Text = info2[3];
+        }
+        private void materialButton9_Click(object sender, EventArgs e) //Exportar
+        {
+            string informacion = "Formula: " + ReglaTrapecio.expresion2 + " Limite a: " + ReglaTrapecio.limitea + " Limite b: " + ReglaTrapecio.limiteb + " Numero de intervalos: " + ReglaTrapecio.limiten + " Resultado: " + ReglaTrapecio.resultado + " \n";
+            a.WriteTextToFile(desplegar_filedialo(), informacion);
 
         }
 
-        private void PanelTrapecio_Paint(object sender, PaintEventArgs e)
+        #endregion
+
+        #region Botonos leer y exportar simpson
+        private void materialButton8_Click(object sender, EventArgs e) //simpson
         {
 
+            string info = a.ReadTextFile(desplegar_filedialog());
+            string[] info2 = info.Split(',');
+            materialTextBox1.Text = info2[0];
+            materialTextBox2.Text = info2[1];
+            materialTextBox3.Text = info2[2];
+            materialTextBox4.Text = info2[3];
         }
+
+        private void materialButton10_Click(object sender, EventArgs e)//exportar simpson
+        {
+            string informacion = "Formula: " + ReglaSimpsons.expresion2 + " Limite a: " + ReglaSimpsons.limitea + " Limite b: " + ReglaSimpsons.limiteb + " Numero de intervalos: " + ReglaSimpsons.limiten + " Resultado: " + ReglaSimpsons.resultado + " \n";
+            a.WriteTextToFile(desplegar_filedialo(), informacion);
+
+        }
+        #endregion
+
+       
     }
 }

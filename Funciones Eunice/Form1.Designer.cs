@@ -36,6 +36,8 @@
             button1 = new Button();
             label1 = new Label();
             PanelSimpson = new Panel();
+            materialButton10 = new MaterialSkin.Controls.MaterialButton();
+            materialButton8 = new MaterialSkin.Controls.MaterialButton();
             materialButton3 = new MaterialSkin.Controls.MaterialButton();
             materialButton2 = new MaterialSkin.Controls.MaterialButton();
             materialTextBox4 = new MaterialSkin.Controls.MaterialTextBox();
@@ -50,6 +52,8 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             PanelTrapecio = new Panel();
+            materialButton9 = new MaterialSkin.Controls.MaterialButton();
+            materialButton7 = new MaterialSkin.Controls.MaterialButton();
             materialButton4 = new MaterialSkin.Controls.MaterialButton();
             materialButton5 = new MaterialSkin.Controls.MaterialButton();
             materialTextBox5 = new MaterialSkin.Controls.MaterialTextBox();
@@ -147,11 +151,12 @@
             label1.Size = new Size(1325, 67);
             label1.TabIndex = 0;
             label1.Text = "Bienvenidos a nuestro Proyecto Final";
-            label1.Click += label1_Click;
             // 
             // PanelSimpson
             // 
             PanelSimpson.BackColor = Color.FromArgb(107, 179, 155);
+            PanelSimpson.Controls.Add(materialButton10);
+            PanelSimpson.Controls.Add(materialButton8);
             PanelSimpson.Controls.Add(materialButton3);
             PanelSimpson.Controls.Add(materialButton2);
             PanelSimpson.Controls.Add(materialTextBox4);
@@ -169,6 +174,46 @@
             PanelSimpson.Name = "PanelSimpson";
             PanelSimpson.Size = new Size(1348, 721);
             PanelSimpson.TabIndex = 5;
+            // 
+            // materialButton10
+            // 
+            materialButton10.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialButton10.Depth = 0;
+            materialButton10.DrawShadows = true;
+            materialButton10.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            materialButton10.HighEmphasis = true;
+            materialButton10.Icon = null;
+            materialButton10.Location = new Point(445, 114);
+            materialButton10.Margin = new Padding(4, 6, 4, 6);
+            materialButton10.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButton10.Name = "materialButton10";
+            materialButton10.Size = new Size(162, 36);
+            materialButton10.TabIndex = 28;
+            materialButton10.Text = "Exportar Archivo";
+            materialButton10.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton10.UseAccentColor = false;
+            materialButton10.UseVisualStyleBackColor = true;
+            materialButton10.Click += materialButton10_Click;
+            // 
+            // materialButton8
+            // 
+            materialButton8.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialButton8.Depth = 0;
+            materialButton8.DrawShadows = true;
+            materialButton8.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            materialButton8.HighEmphasis = true;
+            materialButton8.Icon = null;
+            materialButton8.Location = new Point(644, 114);
+            materialButton8.Margin = new Padding(4, 6, 4, 6);
+            materialButton8.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButton8.Name = "materialButton8";
+            materialButton8.Size = new Size(122, 36);
+            materialButton8.TabIndex = 27;
+            materialButton8.Text = "Leer Archivo";
+            materialButton8.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton8.UseAccentColor = false;
+            materialButton8.UseVisualStyleBackColor = true;
+            materialButton8.Click += materialButton8_Click;
             // 
             // materialButton3
             // 
@@ -332,9 +377,9 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.FromArgb(218, 243, 234);
-            pictureBox1.Location = new Point(34, 220);
+            pictureBox1.Location = new Point(34, 189);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1280, 468);
+            pictureBox1.Size = new Size(1280, 510);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -342,9 +387,9 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(3, 184);
+            pictureBox2.Location = new Point(3, 159);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(1347, 524);
+            pictureBox2.Size = new Size(1347, 562);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -352,6 +397,8 @@
             // PanelTrapecio
             // 
             PanelTrapecio.BackColor = Color.FromArgb(107, 179, 155);
+            PanelTrapecio.Controls.Add(materialButton9);
+            PanelTrapecio.Controls.Add(materialButton7);
             PanelTrapecio.Controls.Add(materialButton4);
             PanelTrapecio.Controls.Add(materialButton5);
             PanelTrapecio.Controls.Add(materialTextBox5);
@@ -369,7 +416,46 @@
             PanelTrapecio.Name = "PanelTrapecio";
             PanelTrapecio.Size = new Size(1347, 719);
             PanelTrapecio.TabIndex = 5;
-            PanelTrapecio.Paint += PanelTrapecio_Paint;
+            // 
+            // materialButton9
+            // 
+            materialButton9.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialButton9.Depth = 0;
+            materialButton9.DrawShadows = true;
+            materialButton9.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            materialButton9.HighEmphasis = true;
+            materialButton9.Icon = null;
+            materialButton9.Location = new Point(534, 94);
+            materialButton9.Margin = new Padding(4, 6, 4, 6);
+            materialButton9.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButton9.Name = "materialButton9";
+            materialButton9.Size = new Size(162, 36);
+            materialButton9.TabIndex = 27;
+            materialButton9.Text = "Exportar Archivo";
+            materialButton9.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton9.UseAccentColor = false;
+            materialButton9.UseVisualStyleBackColor = true;
+            materialButton9.Click += materialButton9_Click;
+            // 
+            // materialButton7
+            // 
+            materialButton7.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialButton7.Depth = 0;
+            materialButton7.DrawShadows = true;
+            materialButton7.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            materialButton7.HighEmphasis = true;
+            materialButton7.Icon = null;
+            materialButton7.Location = new Point(721, 94);
+            materialButton7.Margin = new Padding(4, 6, 4, 6);
+            materialButton7.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButton7.Name = "materialButton7";
+            materialButton7.Size = new Size(122, 36);
+            materialButton7.TabIndex = 26;
+            materialButton7.Text = "Leer Archivo";
+            materialButton7.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton7.UseAccentColor = false;
+            materialButton7.UseVisualStyleBackColor = true;
+            materialButton7.Click += materialButton7_Click;
             // 
             // materialButton4
             // 
@@ -554,9 +640,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PaleVioletRed;
             ClientSize = new Size(1348, 721);
-            Controls.Add(panel1);
             Controls.Add(PanelTrapecio);
             Controls.Add(PanelSimpson);
+            Controls.Add(panel1);
             MaximizeBox = false;
             Name = "Form1";
             ShowIcon = false;
@@ -610,5 +696,9 @@
         private Label label11;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
+        private MaterialSkin.Controls.MaterialButton materialButton8;
+        private MaterialSkin.Controls.MaterialButton materialButton7;
+        private MaterialSkin.Controls.MaterialButton materialButton10;
+        private MaterialSkin.Controls.MaterialButton materialButton9;
     }
 }
