@@ -62,6 +62,11 @@ namespace Funciones_Eunice
 
                     plt.PlotPolygon(intervalX, intervalY, fillColor: System.Drawing.Color.FromArgb(100, System.Drawing.Color.Red));
                 }
+                //Si area es negativa convertirla a positiva
+                if (area < 0)
+                {
+                    area *= -1;
+                }
 
                 // Mostrar el resultado de la regla de Simpson en el gráfico
                 plt.Title($"Gráfico de la función\nÁrea (Regla de Simpson): {area}");

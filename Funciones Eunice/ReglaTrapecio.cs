@@ -52,10 +52,7 @@ namespace Funciones_Eunice
 
                 area += (funcion(a) + funcion(b)) / 2;
                 area *= h;
-                if (area < 0)
-                {
-                    area*=-1;
-                }
+             
                 // Graficar los puntos del trapecio
                 for (int i = 0; i < n; i++)
                 {
@@ -67,7 +64,11 @@ namespace Funciones_Eunice
 
                     plt.PlotPolygon(intervalX, intervalY, fillColor: System.Drawing.Color.FromArgb(100, System.Drawing.Color.Red));
                 }
-
+                //Si area es negativa convertirla a positiva
+                if (area < 0)
+                {
+                    area *= -1;
+                }
                 // Mostrar el resultado de la regla del trapecio en el gráfico
                 plt.Title($"Gráfico de la función\nÁrea: {area}");
                 resultado = area;

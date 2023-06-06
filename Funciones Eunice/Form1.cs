@@ -1,5 +1,8 @@
 using System.Xml.Linq;
 using System.Drawing;
+using MathNet.Symbolics;
+using System.Security.Cryptography;
+
 namespace Funciones_Eunice
 {
     public partial class Form1 : Form
@@ -23,7 +26,7 @@ namespace Funciones_Eunice
 
             // Animación para ocultar el Panel1 y mostrar el PanelSimpson
             System.Windows.Forms.Timer animationTimer = new System.Windows.Forms.Timer();
-            animationTimer.Interval = 15; // Intervalo de actualización de la animación (en milisegundos)
+            animationTimer.Interval = 6; // Intervalo de actualización de la animación (en milisegundos)
             animationTimer.Tick += (sender, e) =>
             {
                 // Actualizar la posición de los paneles en cada tick del timer
@@ -52,7 +55,7 @@ namespace Funciones_Eunice
 
             // Animación para ocultar el PanelSimpson y mostrar el Panel1
             System.Windows.Forms.Timer animationTimer = new System.Windows.Forms.Timer();
-            animationTimer.Interval = 10; // Intervalo de actualización de la animación (en milisegundos)
+            animationTimer.Interval = 6; // Intervalo de actualización de la animación (en milisegundos)
             animationTimer.Tick += (sender, e) =>
             {
                 // Actualizar la posición de los paneles en cada tick del timer
@@ -91,16 +94,40 @@ namespace Funciones_Eunice
 
         private void MaterialTextBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (char.IsLetter(e.KeyChar) && e.KeyChar != '-')
             {
-                e.Handled = true;
+                e.Handled = false;
             }
         }
         private void MaterialTextBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (char.IsLetter(e.KeyChar) && e.KeyChar != '-')
             {
-                e.Handled = true;
+                e.Handled = false;
+            }
+        }
+        private void materialTextBox6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) && e.KeyChar != '-')
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void materialTextBox7_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (char.IsLetter(e.KeyChar) && e.KeyChar != '-')
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void materialTextBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) && e.KeyChar != '-')
+            {
+                e.Handled = false;
             }
         }
         #endregion
@@ -217,7 +244,7 @@ namespace Funciones_Eunice
             // Si el usuario cancela el cuadro de diálogo o cierra sin seleccionar un archivo, retorna una cadena vacía
             return string.Empty;
         }
-    
+
 
 
         LecturaYExportacion a = new();
@@ -264,6 +291,7 @@ namespace Funciones_Eunice
         }
         #endregion
 
-       
+
+
     }
 }
