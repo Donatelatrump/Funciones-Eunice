@@ -113,7 +113,7 @@
             // button2
             // 
             button2.BackColor = Color.FromArgb(133, 230, 192);
-            button2.FlatAppearance.BorderColor = Color.Coral;
+            button2.FlatAppearance.BorderColor = Color.White;
             button2.FlatAppearance.BorderSize = 3;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Courier New", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
@@ -130,7 +130,7 @@
             // 
             button1.BackColor = Color.FromArgb(133, 230, 192);
             button1.BackgroundImageLayout = ImageLayout.None;
-            button1.FlatAppearance.BorderColor = Color.Coral;
+            button1.FlatAppearance.BorderColor = Color.White;
             button1.FlatAppearance.BorderSize = 3;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Courier New", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
