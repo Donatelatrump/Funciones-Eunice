@@ -86,7 +86,11 @@ namespace Funciones_Eunice
         #region TextBox Solo reciben numeros
         private void MaterialTextBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '-' || e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+            else
             {
                 e.Handled = true;
             }
@@ -94,40 +98,60 @@ namespace Funciones_Eunice
 
         private void MaterialTextBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar) && e.KeyChar != '-')
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '-' || e.KeyChar == '.')
             {
                 e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
         private void MaterialTextBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar) && e.KeyChar != '-')
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '-' || e.KeyChar == '.')
             {
                 e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
         private void materialTextBox6_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar) && e.KeyChar != '-')
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '-' || e.KeyChar == '.')
             {
                 e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
 
         private void materialTextBox7_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (char.IsLetter(e.KeyChar) && e.KeyChar != '-')
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '-' || e.KeyChar == '.')
             {
                 e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
 
         private void materialTextBox5_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar) && e.KeyChar != '-')
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '-' || e.KeyChar == '.')
             {
                 e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
         #endregion
@@ -136,7 +160,7 @@ namespace Funciones_Eunice
         [Obsolete]
         private void MaterialButton1_Click(object sender, EventArgs e)
         {
-            ReglaSimpsons.CalcularYMostrarGrafico(materialTextBox1.Text, Convert.ToDouble(materialTextBox2.Text), Convert.ToDouble(materialTextBox3.Text), Convert.ToInt32(materialTextBox4.Text), pictureBox1);
+            ReglaSimpsons.CalcularYMostrarGrafico(materialTextBox1.Text, Convert.ToDouble(materialTextBox2.Text), Convert.ToDouble(materialTextBox3.Text), Convert.ToInt32(materialTextBox4.Text), pictureBox1, Tiempo_Simpson);
 
         }
 
@@ -159,7 +183,7 @@ namespace Funciones_Eunice
         [Obsolete]
         private void materialButton6_Click(object sender, EventArgs e)
         {
-            ReglaTrapecio.CalcularYMostrarGrafico(materialTextBox8.Text, Convert.ToDouble(materialTextBox7.Text), Convert.ToDouble(materialTextBox6.Text), Convert.ToInt32(materialTextBox5.Text), pictureBox3);
+            ReglaTrapecio.CalcularYMostrarGrafico(materialTextBox8.Text, Convert.ToDouble(materialTextBox7.Text), Convert.ToDouble(materialTextBox6.Text), Convert.ToInt32(materialTextBox5.Text), pictureBox3, Tiempo_Trapecio);
         }
 
         private void materialButton5_Click(object sender, EventArgs e)
@@ -290,8 +314,6 @@ namespace Funciones_Eunice
 
         }
         #endregion
-
-
 
     }
 }

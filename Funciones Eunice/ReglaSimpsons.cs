@@ -1,5 +1,7 @@
 ﻿using NCalc;
 using ScottPlot;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace Funciones_Eunice
 {
@@ -13,14 +15,26 @@ namespace Funciones_Eunice
         public static double resultado = 0;
 
         [Obsolete]
-        public static void CalcularYMostrarGrafico(string expresion, double a, double b, int n, PictureBox pictureBox)
+        public static void CalcularYMostrarGrafico(string expresion, double a, double b, int n, PictureBox pictureBox,Label label)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             limitea = a;
             limiteb = b;
             limiten = n;
-
+            expresion2 = expresion;
             try
             {
+                // Reemplazar x^n por x*x*x*...*x
+                expresion = Regex.Replace(expresion, @"x\^(\d+)", match =>
+                {
+                    int repeticiones = int.Parse(match.Groups[1].Value);
+                    return "x" + string.Concat(Enumerable.Repeat("*x", repeticiones - 1));
+                });
+
+                MessageBox.Show(expresion);
+
                 Expression expression = new Expression(expresion);
 
                 var plt = new Plot(pictureBox.Width, pictureBox.Height);
@@ -33,7 +47,7 @@ namespace Funciones_Eunice
                     expression.Parameters["x"] = xValues[i];
                     yValues[i] = Convert.ToDouble(expression.Evaluate());
                 }
-                expresion2 = expresion;
+
                 plt.PlotScatter(xValues, yValues, label: "Función");
 
                 // Cálculo de la regla de Simpson
@@ -62,6 +76,7 @@ namespace Funciones_Eunice
 
                     plt.PlotPolygon(intervalX, intervalY, fillColor: System.Drawing.Color.FromArgb(100, System.Drawing.Color.Red));
                 }
+
                 //Si area es negativa convertirla a positiva
                 if (area < 0)
                 {
@@ -79,6 +94,10 @@ namespace Funciones_Eunice
 
                 // Mostrar el gráfico en el PictureBox
                 pictureBox.Image = plt.GetBitmap();
+
+                stopwatch.Stop();
+                TimeSpan tiempo = stopwatch.Elapsed;
+                label.Text=("Tiempo de ejecución: " + tiempo.ToString("s\\.ffffff") + " Segundos");
             }
             catch (Exception ex)
             {

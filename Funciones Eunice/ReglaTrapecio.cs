@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using NCalc;
 using ScottPlot;
@@ -13,14 +15,23 @@ namespace Funciones_Eunice
         public static string expresion2 = "";
         public static double resultado = 0;
         [Obsolete]
-        public static void CalcularYMostrarGrafico(string expresion, double a, double b, int n, PictureBox pictureBox)
+        public static void CalcularYMostrarGrafico(string expresion, double a, double b, int n, PictureBox pictureBox,Label label)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             limitea = a;
             limiteb = b;
             limiten = n;
             expresion2 = expresion;
             try
             {
+                expresion = Regex.Replace(expresion, @"x\^(\d+)", match =>
+                {
+                    int repeticiones = int.Parse(match.Groups[1].Value);
+                    return "x" + string.Concat(Enumerable.Repeat("*x", repeticiones - 1));
+                });
+
                 // Creación de la función a partir de la expresión
                 Func<double, double> funcion = x => EvaluateExpression(expresion, x);
 
@@ -52,7 +63,7 @@ namespace Funciones_Eunice
 
                 area += (funcion(a) + funcion(b)) / 2;
                 area *= h;
-             
+
                 // Graficar los puntos del trapecio
                 for (int i = 0; i < n; i++)
                 {
@@ -80,13 +91,16 @@ namespace Funciones_Eunice
 
                 // Mostrar el gráfico en el PictureBox
                 pictureBox.Image = plt.GetBitmap();
+
+                stopwatch.Stop();
+                TimeSpan tiempo = stopwatch.Elapsed;
+                label.Text =("Tiempo de ejecución: " + tiempo.ToString("s\\.ffffff") );
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al evaluar la expresión matemática: " + ex.Message);
             }
         }
-
         private static double EvaluateExpression(string expression, double x)
         {
             var eval = new NCalc.Expression(expression);
