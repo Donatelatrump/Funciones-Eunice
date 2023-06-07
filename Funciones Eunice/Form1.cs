@@ -160,7 +160,7 @@ namespace Funciones_Eunice
         [Obsolete]
         private void MaterialButton1_Click(object sender, EventArgs e)
         {
-            ReglaSimpsons.CalcularYMostrarGrafico(materialTextBox1.Text, Convert.ToDouble(materialTextBox2.Text), Convert.ToDouble(materialTextBox3.Text), Convert.ToInt32(materialTextBox4.Text), pictureBox1, Tiempo_Simpson);
+            ReglaSimpsons.Regla_Simpson(materialTextBox1.Text, Convert.ToDouble(materialTextBox2.Text), Convert.ToDouble(materialTextBox3.Text), Convert.ToInt32(materialTextBox4.Text), pictureBox1, Tiempo_Simpson);
 
         }
 
@@ -183,7 +183,7 @@ namespace Funciones_Eunice
         [Obsolete]
         private void materialButton6_Click(object sender, EventArgs e)
         {
-            ReglaTrapecio.CalcularYMostrarGrafico(materialTextBox8.Text, Convert.ToDouble(materialTextBox7.Text), Convert.ToDouble(materialTextBox6.Text), Convert.ToInt32(materialTextBox5.Text), pictureBox3, Tiempo_Trapecio);
+            ReglaTrapecio.Regla_Trapecio(materialTextBox8.Text, Convert.ToDouble(materialTextBox7.Text), Convert.ToDouble(materialTextBox6.Text), Convert.ToInt32(materialTextBox5.Text), pictureBox3, Tiempo_Trapecio);
         }
 
         private void materialButton5_Click(object sender, EventArgs e)
@@ -288,7 +288,7 @@ namespace Funciones_Eunice
         }
         private void materialButton9_Click(object sender, EventArgs e) //Exportar
         {
-            string informacion = "Formula: " + ReglaTrapecio.expresion2 + " Limite a: " + ReglaTrapecio.limitea + " Limite b: " + ReglaTrapecio.limiteb + " Numero de intervalos: " + ReglaTrapecio.limiten + " Resultado: " + ReglaTrapecio.resultado + " \n";
+            string informacion = "Formula: " + ReglaTrapecio.expresion2 + " Limite a: " + ReglaTrapecio.limitea + " Limite b: " + ReglaTrapecio.limiteb + " Numero de intervalos: " + ReglaTrapecio.limiten + " Resultado: " + ReglaTrapecio.resultado + "Tiempo : " + ReglaTrapecio.tiempo1 + " \n";
             a.WriteTextToFile(desplegar_filedialo(), informacion);
 
         }
@@ -309,7 +309,7 @@ namespace Funciones_Eunice
 
         private void materialButton10_Click(object sender, EventArgs e)//exportar simpson
         {
-            string informacion = "Formula: " + ReglaSimpsons.expresion2 + " Limite a: " + ReglaSimpsons.limitea + " Limite b: " + ReglaSimpsons.limiteb + " Numero de intervalos: " + ReglaSimpsons.limiten + " Resultado: " + ReglaSimpsons.resultado + " \n";
+            string informacion = "Formula: " + ReglaSimpsons.expresion2 + " Limite a: " + ReglaSimpsons.limitea + " Limite b: " + ReglaSimpsons.limiteb + " Numero de intervalos: " + ReglaSimpsons.limiten + " Resultado: " + ReglaSimpsons.resultado +" Tiempo" + ReglaSimpsons.tiempo1 + " \n";
             a.WriteTextToFile(desplegar_filedialo(), informacion);
 
         }

@@ -13,9 +13,10 @@ namespace Funciones_Eunice
         public static int limiten = 0;
         public static string expresion2 = "";
         public static double resultado = 0;
+        public static string tiempo1 = "";
 
         [Obsolete]
-        public static void CalcularYMostrarGrafico(string expresion, double a, double b, int n, PictureBox pictureBox,Label label)
+        public static void Regla_Simpson(string expresion, double a, double b, int n, PictureBox pictureBox,Label label)
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -96,6 +97,7 @@ namespace Funciones_Eunice
                 stopwatch.Stop();
                 TimeSpan tiempo = stopwatch.Elapsed;
                 label.Text=("Tiempo de ejecución: " + tiempo.ToString("s\\.ffffff") + " Segundos");
+                tiempo1 = tiempo.ToString("s\\.ffffff") + " Segundos";
             }
             catch (Exception ex)
             {
