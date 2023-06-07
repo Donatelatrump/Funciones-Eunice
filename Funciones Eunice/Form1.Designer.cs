@@ -665,9 +665,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PaleVioletRed;
             ClientSize = new Size(1543, 972);
+            Controls.Add(panel1);
             Controls.Add(PanelTrapecio);
             Controls.Add(PanelSimpson);
-            Controls.Add(panel1);
             MaximizeBox = false;
             Name = "Form1";
             ShowIcon = false;

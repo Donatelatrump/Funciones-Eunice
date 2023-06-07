@@ -33,8 +33,6 @@ namespace Funciones_Eunice
                     return "x" + string.Concat(Enumerable.Repeat("*x", repeticiones - 1));
                 });
 
-                MessageBox.Show(expresion);
-
                 Expression expression = new Expression(expresion);
 
                 var plt = new Plot(pictureBox.Width, pictureBox.Height);
